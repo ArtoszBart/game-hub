@@ -6,6 +6,6 @@ export interface IPlatform {
 	slug: string;
 }
 
-const usePlatforms = () => useData<IPlatform>('/pxlatforms/lists/parents');
+const usePlatforms = () => useData<IPlatform>('/platforms/lists/parents');
 
 export default usePlatforms;
