@@ -10,10 +10,11 @@ import useGenres, { IGenre } from '../hooks/useGenres';
 import getCroppedImageUrl from '../services/imageUrl';
 
 interface IProps {
+	selectedGenre: IGenre | null;
 	onSelectedGenre: (genre: IGenre) => void;
 }
 
-const GenreList = ({ onSelectedGenre }: IProps) => {
+const GenreList = ({ selectedGenre, onSelectedGenre }: IProps) => {
 	const { data, isLoading, error } = useGenres();
 
 	if (error) return null;
@@ -33,6 +34,11 @@ const GenreList = ({ onSelectedGenre }: IProps) => {
 						<Button
 							onClick={() => onSelectedGenre(genre)}
 							fontSize='lg'
+							fontWeight={
+								genre.id === selectedGenre?.id
+									? 'bold'
+									: 'normal'
+							}
 							variant='link'
 						>
 							{genre.name}
