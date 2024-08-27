@@ -11,11 +11,11 @@ import useGenres, { IGenre } from '../hooks/useGenres';
 import getCroppedImageUrl from '../services/imageUrl';
 
 interface IProps {
-	selectedGenre: IGenre | null;
+	selectedGenreId?: number;
 	onSelectedGenre: (genre: IGenre) => void;
 }
 
-const GenreList = ({ selectedGenre, onSelectedGenre }: IProps) => {
+const GenreList = ({ selectedGenreId, onSelectedGenre }: IProps) => {
 	const { data, isLoading, error } = useGenres();
 
 	if (error) return null;
@@ -43,7 +43,7 @@ const GenreList = ({ selectedGenre, onSelectedGenre }: IProps) => {
 								onClick={() => onSelectedGenre(genre)}
 								fontSize='lg'
 								fontWeight={
-									genre.id === selectedGenre?.id
+									genre.id === selectedGenreId
 										? 'bold'
 										: 'normal'
 								}
