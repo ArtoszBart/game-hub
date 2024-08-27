@@ -28,7 +28,7 @@ const useGames = (gameQuery: IGameQuery) =>
 				},
 			}),
 		initialPageParam: 1,
-		staleTime: 10 * 1000,
+		staleTime: 24 * 60 * 60 * 1000, //24h
 		placeholderData: keepPreviousData,
 		getNextPageParam: (lastPage, allPages) => {
 			return lastPage.next ? allPages.length + 1 : undefined;
