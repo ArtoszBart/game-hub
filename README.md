@@ -94,12 +94,12 @@ You can access the live application here: [Game Hub](https://game-hub.bartart.de
     This step ensures that all necessary libraries and dependencies are set up.
 
 3. **Configure Environment Variables**  
-  Create a `.env` file in the project root directory and add your RAWG API key:
+   Create a `.env` file in the project root directory and add your RAWG API key:
 
     ```env
     VITE_RAWG_API_KEY=your_rawg_api_key_here
     ```
-    
+
     This key allows the app to fetch game data from the RAWG API.
 
 4. **Start the Development Server**  
@@ -108,7 +108,7 @@ You can access the live application here: [Game Hub](https://game-hub.bartart.de
     ```bash
     npm run dev
     ```
-    
+
     The app will start, and you can access it in your browser at http://localhost:3000.
 
 ## Environment Variables
